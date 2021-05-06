@@ -6,7 +6,7 @@
   "override": {
     "buildEnv": {
     },
-    "build": ["./configure --prefix #{self.install} --disable-dependency-tracking #{os == 'darwin' ? '--build=aarch64-apple-darwin20.3.0': '' } #{os == 'windows'?  --host 'x86_64-w64-mingw32': '' }", "make"],
+    "build": ["./configure --prefix #{self.install} --disable-dependency-tracking #{os == 'darwin' ? '--build=aarch64-apple-darwin20.3.0': '' } #{os == 'windows'?  '--host x86_64-w64-mingw32': '' }", "make"],
     "install": "make install",
     "buildsInSource": true,
     "exportedEnv": {
