@@ -1,6 +1,6 @@
 {
   "name": "esy-libffi",
-  "version": "3.3.0",
+  "version": "3.3.1",
   "description": "hello packaged for esy",
   "source": "https://github.com/libffi/libffi/releases/download/v3.3/libffi-3.3.tar.gz#8df6cb570c8d6596a67d1c0773bf00650154f7aa",
   "override": {
@@ -12,6 +12,10 @@
     "exportedEnv": {
       "PKG_CONFIG_PATH": {
         "val": "#{self.lib / 'pkgconfig'}",
+        "scope": "global"
+      },
+      "LD_LIBRARY_PATH": {
+        "val": "#{self.lib : $LD_LIBRARY_PATH}",
         "scope": "global"
       }
     },
