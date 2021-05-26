@@ -6,7 +6,7 @@
   "override": {
     "buildEnv": {
     },
-    "build": "build.sh",
+    "build": "sh build.sh",
     "install": "make install",
     "buildsInSource": true,
     "exportedEnv": {
