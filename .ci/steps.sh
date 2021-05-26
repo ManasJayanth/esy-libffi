@@ -24,7 +24,7 @@ then
     new_section "Setting up verdaccio"
     mkdir -p ~/.config/verdaccio ~/.local/share/verdaccio/storage
     cp ./.ci/verdaccio-config.yaml ~/.config/verdaccio/config.yaml
-    verdaccio&
+    verdaccio -c ./.ci/verdaccio-config.yaml&
     sleep 1
 fi
 
@@ -35,7 +35,7 @@ npm publish --registry $REGISTRY_URL $PWD/package.tar.gz
 
 cd esy-test/
 export ESY__PREFIX=$HOME/_esy_test/prefix
-rm -rf $ESY__PREFIX
+rm -rf $ESY__PREFIX _esy _esy-package esy-test/esy.lock
 mkdir -p $ESY__PREFIX
 esy i -vvv --npm-registry $REGISTRY_URL
 esy b
