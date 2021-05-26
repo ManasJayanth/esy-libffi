@@ -8,13 +8,10 @@ case "$(uname -s)" in
         ;;
     DARWIN*|Darwin*)
         FLAGS="$FLAGS --disable-dependency-tracking"
-        case "$(uname -m)" in
-          arm64*)
+        if [[ $(uname -m) == "arm64"* ]]; then
             FLAGS="$FLAGS -build=aarch64-apple-darwin20.3.0"
-            ;;
-          *)
-            ;;
-        esac
+        fi
+        ;;
     *)
         ;;
 esac
