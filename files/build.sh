@@ -10,10 +10,10 @@ case "$(uname -s)" in
         FLAGS="$FLAGS --disable-dependency-tracking"
         case "$(uname -m)" in
           arm64*)
-          FLAGS="$FLAGS -build=aarch64-apple-darwin20.3.0"
-          ;;
-        case *)
-          ;;
+            FLAGS="$FLAGS -build=aarch64-apple-darwin20.3.0"
+            ;;
+          *)
+            ;;
         esac
     *)
         ;;
