@@ -6,19 +6,17 @@ case "$(uname -s)" in
     CYGWIN*|MINGW32*|MSYS*)
         FLAGS="$FLAGS --host x86_64-w64-mingw32"
         ;;
-    DARWIN*)
+    DARWIN* | Darwin*)
         FLAGS="$FLAGS --disable-dependency-tracking"
-        case "$(uname -m)" in
-          arm64*)
+        if [[ $(uname -m) == "arm64"* ]]; then
             FLAGS="$FLAGS -build=aarch64-apple-darwin20.3.0"
-            ;;
-          *)
-            ;;
-        esac
+        fi
+        ;;
     *)
         ;;
 esac
 
+echo $FLAGS
 
-./configure $FLAGS
-make
+#./configure $FLAGS
+# make
