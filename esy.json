@@ -4,9 +4,8 @@
   "description": "hello packaged for esy",
   "source": "https://github.com/libffi/libffi/releases/download/v3.3/libffi-3.3.tar.gz#8df6cb570c8d6596a67d1c0773bf00650154f7aa",
   "override": {
-    "buildEnv": {
-    },
-    "build": ["./configure --prefix #{self.install} --disable-dependency-tracking #{os == 'darwin' ? '--build=aarch64-apple-darwin20.3.0': '' } #{os == 'windows'?  '--host x86_64-w64-mingw32': '' }", "make"],
+    "buildEnv": {},
+    "build": "sh build.sh --prefix=#{self.install}",
     "install": "make install",
     "buildsInSource": true,
     "exportedEnv": {
