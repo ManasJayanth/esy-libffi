@@ -16,7 +16,5 @@ case "$(uname -s)" in
         ;;
 esac
 
-echo $FLAGS
-
-#./configure $FLAGS
-# make
+./configure $FLAGS
+make
