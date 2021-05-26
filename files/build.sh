@@ -1,6 +1,6 @@
 #! /bin/sh
 
-FLAGS=
+FLAGS=$1
 
 case "$(uname -s)" in
     CYGWIN*|MINGW32*|MSYS*)
