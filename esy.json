@@ -18,6 +18,8 @@
         "scope": "global"
       }
     },
-    "dependencies": {}
+    "dependencies": {
+      "esy-texinfo": "esy-packages/esy-texinfo" 
+    }
   }
 }
