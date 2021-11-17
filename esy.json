@@ -18,6 +18,8 @@
         "scope": "global"
       }
     },
-    "dependencies": {}
+    "dependencies": {
+      "@opam/conf-texinfo": "esy-packages/esy-texinfo:package.json#4a05feafbbcc4c57d5d25899fbdab98961b9a69c"
+    }
   }
 }
