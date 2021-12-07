@@ -1,5 +1,6 @@
 #! /bin/sh
 
+set -e
 set -o xtrace
 
 new_section () {
