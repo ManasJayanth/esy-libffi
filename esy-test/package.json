@@ -1,6 +1,10 @@
 {
   "esy": {
-    "build": "true"
+    "buildsInSource": true,
+    "build": [
+      "cc -L #{esy-libffi.lib} -lffi -I#{esy-libffi.install / 'include'} closure.c -o closure",
+      "./closure"
+    ]
   },
   "dependencies": {
     "esy-libffi": "*"
