@@ -1,7 +1,6 @@
 name: Build and test the esy package
 
 on:
-  - pull_request
   - push
 
 jobs:
@@ -30,8 +29,9 @@ jobs:
 
       - name: Run end-to-end tests on the package 
         run: bash ./.ci/steps.sh
+        shell: bash
 
       - uses: actions/upload-artifact@v2
         with:
           name: release
-          path: package.tar.gz
+          path: _esy-package/libffi-3.3

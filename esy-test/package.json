@@ -2,8 +2,8 @@
   "esy": {
     "buildsInSource": true,
     "build": [
-      "cc -L #{esy-libffi.lib} -lffi -I#{esy-libffi.install / 'include'} closure.c -o closure",
-      "./closure"
+      "#{os == 'windows' ? 'x86_64-w64-mingw32-gcc.exe' : 'cc'} closure.c -o closure -L #{esy-libffi.lib} -lffi -I#{esy-libffi.install / 'include'}",
+      "#{os == 'windows' ? './closure.exe': './closure'}"
     ]
   },
   "dependencies": {
