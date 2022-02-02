@@ -2,7 +2,7 @@
 
 # esy-libffi
 
-`esy-libffi` is sample package, [`hello`](https://github.com/esy/test-hello-c), packaged for [`esy`](https://esy.sh/).
+`esy-libffi` is sample package, [`libffi`](https://github.com/esy/test-hello-c), packaged for [`esy`](https://esy.sh/).
 
 ## Why
 `esy` can not only fetch and install Reason and OCaml libraries and tools,
