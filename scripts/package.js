@@ -59,6 +59,7 @@ function fetch(urlStr, urlObj, pathStr, callback) {
 
 function uncompress(pathStr, pkgPath) {
   pathStr = normalisePath(pathStr);
+  pkgPath = normalisePath(pkgPath);
   switch (path.extname(pathStr)) {
     case ".tgz":
     case ".gz":
