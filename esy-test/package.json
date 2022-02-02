@@ -2,7 +2,7 @@
   "esy": {
     "buildsInSource": true,
     "build": [
-      "cc -L #{esy-libffi.lib} -lffi -I#{esy-libffi.install / 'include'} closure.c -o closure",
+      "cc closure.c -o closure -L #{esy-libffi.lib} -lffi -I#{esy-libffi.install / 'include'}",
       "./closure"
     ]
   },
