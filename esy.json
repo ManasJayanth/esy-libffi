@@ -1,11 +1,13 @@
 {
   "name": "esy-libffi",
-  "version": "3.3.1",
-  "description": "hello packaged for esy",
-  "source": "https://github.com/libffi/libffi/releases/download/v3.3/libffi-3.3.tar.gz#8df6cb570c8d6596a67d1c0773bf00650154f7aa",
+  "version": "3.4.6",
+  "description": "libffi packaged for esy",
+  "source": "https://github.com/libffi/libffi/releases/download/v3.4.6/libffi-3.4.6.tar.gz#sha256:b0dea9df23c863a7a50e825440f3ebffabd65df1497108e5d437747843895a4e",
   "override": {
-    "buildEnv": {},
-    "build": "sh build.sh --prefix=#{self.install}",
+    "build": [
+      "./configure #{os == 'windows' ? '--host=x86_64-w64-mingw32': ''} #{os == 'darwin' ? '--disable-dependency-tracking': '' } --prefix=#{self.install}",
+      "make -j#{self.jobs}"
+    ],
     "install": "make install",
     "buildsInSource": true,
     "exportedEnv": {
@@ -17,9 +19,6 @@
         "val": "#{self.lib : $LD_LIBRARY_PATH}",
         "scope": "global"
       }
-    },
-    "dependencies": {
-      "@opam/conf-texinfo": "esy-packages/esy-texinfo:package.json#4a05feafbbcc4c57d5d25899fbdab98961b9a69c"
     }
   }
 }
