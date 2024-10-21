@@ -19,6 +19,9 @@
         "val": "#{self.lib : $LD_LIBRARY_PATH}",
         "scope": "global"
       }
+    },
+    "dependencies": {
+      "esy-texinfo": "*"
     }
   }
 }
